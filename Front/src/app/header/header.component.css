@@ -1,0 +1,32 @@
+#navbar{
+    background-color: #AB8B67;
+}
+
+#login{
+    border: #402E32 solid 2px !important;
+    color: #402E32;
+    font-size: 1.3rem;
+}
+
+#login:hover{
+    background-color: #402E32;
+    color: #FFA500;
+    border:#FFA500 solid;
+}
+
+#social{
+    font-size: 2rem;
+    border:none !important;
+}
+
+#social:hover{
+    color:#FFA500;
+}
+
+.img-fluid{
+    max-width: 130px;
+} 
+
+.borde{
+    border: red solid 3px;
+}

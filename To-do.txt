@@ -1,0 +1,1 @@
+Arreglar versión mobile del header
