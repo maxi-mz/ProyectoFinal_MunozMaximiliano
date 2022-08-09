@@ -1,0 +1,28 @@
+#fondo{
+    height: 385px;
+    
+}
+
+.borde{
+    border: red solid 2px;
+}
+
+#texto{
+    font-family: 'Roboto Mono', monospace;
+    color:#E5ECE9;
+}
+
+#titulo{
+    font-size: 4.5rem;
+}
+
+#nombre{
+    color:#FFA500;
+}
+
+#subtitulo{
+    font-size: 2rem;
+}
+.row{
+    height: 100%;
+}
