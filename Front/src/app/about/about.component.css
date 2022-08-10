@@ -1,0 +1,19 @@
+.foto{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: #402E32;
+    border-width: 4px;
+    filter: grayscale(100%);
+    transition: all 1s;
+}
+
+.foto:hover{
+    transform: rotate(360deg);
+    filter: grayscale(0%);
+}
+
+.espacio{
+    height: 1000px;
+}
