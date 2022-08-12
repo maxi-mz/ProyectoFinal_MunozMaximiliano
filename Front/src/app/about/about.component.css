@@ -12,8 +12,14 @@
 .foto:hover{
     transform: rotate(360deg);
     filter: grayscale(0%);
+    border-color:#FFA500;
 }
 
-.espacio{
-    height: 1000px;
+.texto{
+    font-family: 'Roboto Mono', monospace;
+    
 }
+#nombre{
+    font-size: 1.28rem;
+}
+

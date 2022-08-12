@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './banner/banner.component';
 import { AboutComponent } from './about/about.component';
+import { TrabajoComponent } from './trabajo/trabajo.component';
+import { EducacionComponent } from './educacion/educacion.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BannerComponent,
-    AboutComponent
+    AboutComponent,
+    TrabajoComponent,
+    EducacionComponent,
+    SkillsComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,
