@@ -8,11 +8,11 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.portfolio</groupId>
+	<groupId>com.Portofolio</groupId>
 	<artifactId>Maximiliano</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Maximiliano</name>
-	<description>Proyecto final argentina programa</description>
+	<description>proyecto final para argentina programa</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

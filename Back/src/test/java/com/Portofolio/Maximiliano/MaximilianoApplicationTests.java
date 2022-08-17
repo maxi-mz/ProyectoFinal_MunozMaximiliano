@@ -1,4 +1,4 @@
-package com.portfolio.Maximiliano;
+package com.Portofolio.Maximiliano;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
