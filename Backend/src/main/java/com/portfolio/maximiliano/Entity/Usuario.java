@@ -9,13 +9,12 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private Long IdUsuario;
-
-    private String NombreUsuario;
-    private String apellidoUsuario;
-    private String tituloUsuario;
-    private String imagenUrlUsuario;
-    private String descripcionUsuario;
+    private Long id;
+    private String nombre;
+    private String apellido;
+    private String titulo;
+    private String descripcion;
+    private String url;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "idEdu")
     private List<Educacion> educacionList;
@@ -29,60 +28,60 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(Long idUsuario, String nombreUsuario, String apellidoUsuario, String tituloUsuario, String imagenUrlUsuario, String descripcionUsuario) {
-        IdUsuario = idUsuario;
-        NombreUsuario = nombreUsuario;
-        this.apellidoUsuario = apellidoUsuario;
-        this.tituloUsuario = tituloUsuario;
-        this.imagenUrlUsuario = imagenUrlUsuario;
-        this.descripcionUsuario = descripcionUsuario;
+    public Usuario(Long id, String nombre, String apellido, String titulo, String descripcion, String url) {
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url = url;
     }
 
-    public Long getIdUsuario() {
-        return IdUsuario;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        IdUsuario = idUsuario;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNombreUsuario() {
-        return NombreUsuario;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        NombreUsuario = nombreUsuario;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidoUsuario() {
-        return apellidoUsuario;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidoUsuario(String apellidoUsuario) {
-        this.apellidoUsuario = apellidoUsuario;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getTituloUsuario() {
-        return tituloUsuario;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTituloUsuario(String tituloUsuario) {
-        this.tituloUsuario = tituloUsuario;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getImagenUrlUsuario() {
-        return imagenUrlUsuario;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setImagenUrlUsuario(String imagenUrlUsuario) {
-        this.imagenUrlUsuario = imagenUrlUsuario;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getDescripcionUsuario() {
-        return descripcionUsuario;
+    public String getUrl() {
+        return url;
     }
 
-    public void setDescripcionUsuario(String descripcionUsuario) {
-        this.descripcionUsuario = descripcionUsuario;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
