@@ -1,3 +1,5 @@
+import { SkillsService } from './../../servicios/skills.service';
+import { Skill } from './../../Entidades/skill';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor() { }
+  public skills:Skill[]=[];
+
+  constructor(private SkillsService:SkillsService) { }
 
   ngOnInit(): void {
+    this.getSkills();
   }
 
+  public getSkills(){
+    this.SkillsService.getSkill().subscribe(lista =>{
+      this.skills = lista;
+      console.log(this.skills[0].porcentaje)
+    });
+  }
 }

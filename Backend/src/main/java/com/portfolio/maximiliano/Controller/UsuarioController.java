@@ -17,16 +17,16 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @GetMapping("/id/{id}")
-    public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id){
-        Usuario usuario=usuarioService.buscarUsuarioPorId(id);
-        return new ResponseEntity<>(usuario, HttpStatus.OK);
-    }
-
     @PutMapping("/actualizar")
     public ResponseEntity<Usuario> editarUsuario(@RequestBody Usuario usuario){
         Usuario updateUsuario = usuarioService.editarUsuario(usuario);
         return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id){
+        Usuario usuario=usuarioService.buscarUsuarioPorId(id);
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
 

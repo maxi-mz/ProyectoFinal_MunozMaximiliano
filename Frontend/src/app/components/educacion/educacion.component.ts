@@ -1,3 +1,5 @@
+import { EducacionService } from './../../servicios/educacion.service';
+import { Educacion } from './../../Entidades/educacion';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionComponent implements OnInit {
 
-  constructor() { }
+  public educaciones:Educacion[] = [];
+
+  constructor( private educacionService:EducacionService) { }
 
   ngOnInit(): void {
+    this.getEducacion();
   }
 
+  public getEducacion():void{
+    this.educacionService.getEducacion().subscribe(lista =>{
+      this.educaciones = lista;
+    });
+  }
 }

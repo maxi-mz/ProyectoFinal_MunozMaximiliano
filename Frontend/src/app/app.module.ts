@@ -47,7 +47,8 @@ import { FormsModule } from '@angular/forms';
       "showUnits": false,
       "showImage": true,
       "showBackground": false,
-      "responsive": false})
+      "responsive": false,
+      "percent":10})
   ],
   providers: [],
   bootstrap: [AppComponent],

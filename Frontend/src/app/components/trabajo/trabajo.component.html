@@ -8,20 +8,11 @@
             data-aos-offset="100"
             data-aos-once="true"
             data-aos-duration="1750" >
-            <ul class="list-group">
+            <ul *ngFor="let experiencia of experiencias; let i = index" class="list-group">
                 <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p>
-                </li>
-                <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p></li>
-                <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p>
+                    <h1>{{experiencia.titulo}}</h1>
+                    <h6>{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</h6>
+                    <p> {{experiencia.descripcion}}</p>
                 </li>
             </ul>
         </div>

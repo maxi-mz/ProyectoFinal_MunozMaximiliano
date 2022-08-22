@@ -11,69 +11,71 @@ public class Educacion implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEdu;
-    private String tituloEdu;
-    private String descripcionEdu;
-    private String urlEdu;
-    private int fechaInicioEdu;
-    private int fechaFinEdu;
+    private String titulo;
+    private String descripcion;
+    private String url;
+    private int fechaInicio;
+    private int fechaFin;
 
-    public Educacion(Long idEdu) {
+    public Educacion() {
     }
 
-    public Educacion(Long idEdu, String tituloEdu, String descripcionEdu, String urlEdu, int fechaInicioEdu, int fechaFinEdu) {
+    public Educacion(Long idEdu, String titulo, String descripcion, String url, int fechaInicio, int fechaFin) {
         this.idEdu = idEdu;
-        this.tituloEdu = tituloEdu;
-        this.descripcionEdu = descripcionEdu;
-        this.urlEdu = urlEdu;
-        this.fechaInicioEdu = fechaInicioEdu;
-        this.fechaFinEdu = fechaFinEdu;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url = url;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
     }
 
-    public Long getIdEdu() {
+
+
+    public Long getId() {
         return idEdu;
     }
 
-    public void setIdEdu(Long idEdu) {
+    public void setId(Long idEdu) {
         this.idEdu = idEdu;
     }
 
-    public String getTituloEdu() {
-        return tituloEdu;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTituloEdu(String tituloEdu) {
-        this.tituloEdu = tituloEdu;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getDescripcionEdu() {
-        return descripcionEdu;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescripcionEdu(String descripcionEdu) {
-        this.descripcionEdu = descripcionEdu;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public String getUrlEdu() {
-        return urlEdu;
+    public String getUrl() {
+        return url;
     }
 
-    public void setUrlEdu(String urlEdu) {
-        this.urlEdu = urlEdu;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public int getFechaInicioEdu() {
-        return fechaInicioEdu;
+    public int getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setFechaInicioEdu(int fechaInicioEdu) {
-        this.fechaInicioEdu = fechaInicioEdu;
+    public void setFechaInicio(int fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
 
-    public int getFechaFinEdu() {
-        return fechaFinEdu;
+    public int getFechaFin() {
+        return fechaFin;
     }
 
-    public void setFechaFinEdu(int fechaFinEdu) {
-        this.fechaFinEdu = fechaFinEdu;
+    public void setFechaFin(int fechaFin) {
+        this.fechaFin = fechaFin;
     }
 }

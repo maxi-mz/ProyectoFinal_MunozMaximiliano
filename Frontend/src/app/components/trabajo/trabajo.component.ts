@@ -1,3 +1,5 @@
+import { ExperienciaService } from './../../servicios/experiencia.service';
+import { Experiencia } from './../../Entidades/experiencia';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrabajoComponent implements OnInit {
 
-  constructor() { }
+  public experiencias:Experiencia[] =[];
+
+  constructor(private experienciaService:ExperienciaService) { }
 
   ngOnInit(): void {
+    this.getExperiencia();
+  }
+
+  public getExperiencia(){
+    this.experienciaService.getExperiencia().subscribe(lista =>{
+      this.experiencias = lista;
+    });
   }
 
 }

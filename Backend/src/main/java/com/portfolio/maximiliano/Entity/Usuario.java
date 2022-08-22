@@ -6,10 +6,11 @@ import java.util.*;
 
 @Entity
 public class Usuario implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private Long id;
+    private Long idUsuario;
     private String nombre;
     private String apellido;
     private String titulo;
@@ -23,13 +24,13 @@ public class Usuario implements Serializable {
     private List<Experiencia> experienciaList;
 
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "idSkill")
-    private List<Skills> skillsList ;
+    private List<Skill> skillList;
 
     public Usuario() {
     }
 
-    public Usuario(Long id, String nombre, String apellido, String titulo, String descripcion, String url) {
-        this.id = id;
+    public Usuario(Long idUsuario, String nombre, String apellido, String titulo, String descripcion, String url) {
+        this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
@@ -38,11 +39,11 @@ public class Usuario implements Serializable {
     }
 
     public Long getId() {
-        return id;
+        return idUsuario;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setId(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre() {

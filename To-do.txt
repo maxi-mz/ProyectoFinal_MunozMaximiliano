@@ -1,2 +1,4 @@
 Arreglar versión mobile del header
 Arreglar animación del header en mobile (Ver video en guardar más tarde sobre tamaños de fuentes)
+Diferenciación entre cursos y estudios formales
+Front end experiencia y educacion

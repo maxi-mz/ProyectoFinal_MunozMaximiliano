@@ -9,19 +9,11 @@
             data-aos-once="true"
             data-aos-duration="1750">
             <ul class="list-group">
-                <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p>
-                </li>
-                <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p></li>
-                <li class="list-group-item mb-4">
-                    <h1>titulo</h1>
-                    <h6>(Fecha)</h6>
-                    <p> Descripción</p>
+                <li *ngFor="let educacion of educaciones; let i = index" class="list-group-item mb-4">
+                    <h1>{{educacion.titulo}}</h1>
+                    <h6>{{educacion.descripcion}}</h6>
+                    <h6>{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>
+                    <img src="{{educacion.url}}">
                 </li>
             </ul>
         </div>

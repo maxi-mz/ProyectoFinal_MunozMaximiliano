@@ -23,7 +23,7 @@ public class EducacionService {
         return educacionRepo.save(educacion);
     }
 
-    public List<Educacion> buscarEducacion(){
+    public List<Educacion> buscarEducaciones(){
         return educacionRepo.findAll();
     }
 
