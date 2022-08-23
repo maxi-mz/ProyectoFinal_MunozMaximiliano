@@ -11,11 +11,11 @@ export class EducacionService {
 
   constructor( private http:HttpClient) { }
   
-  public getEducacion():Observable<Educacion[]>{
+  public listarEducacion():Observable<Educacion[]>{
     return this.http.get<Educacion[]>('http://localhost:8080/educacion/listar');
   }
 
-  public updateEducacion(educacion:Educacion):Observable<Educacion>{
+  public actualizarEducacion(educacion:Educacion):Observable<Educacion>{
     return this.http.put<Educacion>('http://localhost:8080/educacion/actualizar',educacion);
   }
 
@@ -26,4 +26,10 @@ export class EducacionService {
   public borrarEducacion(id:number):Observable<void>{
     return this.http.delete<void>('http://localhost:8080/educacion/borrar/id/' + id )
   }
+
+  public obtenerPorId(id: number): Observable<Educacion>{
+    return this.http.get<Educacion>(`http://localhost:8080/educacion/${id}`);
+  }
+  
+  
 }

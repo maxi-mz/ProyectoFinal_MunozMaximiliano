@@ -12,6 +12,10 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HttpClientModule} from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+import { AgregarEducacionComponent } from './components/educacion/edicion/agregar-educacion/agregar-educacion.component';
+import { EditarEducacionComponent } from './components/educacion/edicion/editar-educacion/editar-educacion.component';
+import { HomeComponent } from './components/home/home.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +27,9 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
+    AgregarEducacionComponent,
+    EditarEducacionComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

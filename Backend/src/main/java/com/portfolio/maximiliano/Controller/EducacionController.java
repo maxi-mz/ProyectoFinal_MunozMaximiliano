@@ -43,5 +43,10 @@ public class EducacionController {
         educacionService.borrarEducacion(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Educacion> getById(@PathVariable("id")long id){
+        Educacion educacion = educacionService.buscarEducacionPorId(id);
+        return new ResponseEntity(educacion, HttpStatus.OK);
+    }
 
 }
