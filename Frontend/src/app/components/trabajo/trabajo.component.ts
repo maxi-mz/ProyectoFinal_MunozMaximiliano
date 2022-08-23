@@ -14,13 +14,20 @@ export class TrabajoComponent implements OnInit {
   constructor(private experienciaService:ExperienciaService) { }
 
   ngOnInit(): void {
-    this.getExperiencia();
+    this.listarExperiencia();
   }
 
-  public getExperiencia(){
-    this.experienciaService.getExperiencia().subscribe(lista =>{
+  public listarExperiencia(){
+    this.experienciaService.listarExperiencia().subscribe(lista =>{
       this.experiencias = lista;
     });
+  }
+
+  public borrarExperiencia(id:number):void{
+    console.log(id)
+    this.experienciaService.borrarExperiencia(id).subscribe(data =>{
+      this.listarExperiencia();
+    })
   }
 
 }

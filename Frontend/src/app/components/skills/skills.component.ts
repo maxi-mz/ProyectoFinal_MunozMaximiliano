@@ -11,16 +11,23 @@ export class SkillsComponent implements OnInit {
 
   public skills:Skill[]=[];
 
-  constructor(private SkillsService:SkillsService) { }
+  constructor(private skillsService:SkillsService) { }
 
   ngOnInit(): void {
-    this.getSkills();
+    this.listarSkills();
   }
 
-  public getSkills(){
-    this.SkillsService.getSkill().subscribe(lista =>{
+  public listarSkills(){
+    this.skillsService.getSkill().subscribe(lista =>{
       this.skills = lista;
       console.log(this.skills[0].porcentaje)
     });
+  }
+
+  public borrarSkill(id:number):void{
+    console.log(id)
+    this.skillsService.borrarSkill(id).subscribe(data =>{
+      this.listarSkills();
+    })
   }
 }

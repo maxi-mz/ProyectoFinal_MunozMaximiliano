@@ -1,6 +1,6 @@
 import { AboutService } from './../../servicios/about.service';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/Entidades/usuarios';
+import { Usuario } from 'src/app/Entidades/usuario';
 import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 
 @Component({

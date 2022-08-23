@@ -23,11 +23,10 @@ public class UsuarioController {
         return new ResponseEntity<>(updateUsuario,HttpStatus.OK);
     }
 
-    @GetMapping("/id/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Usuario> obtenerUsuario(@PathVariable("id") Long id){
         Usuario usuario=usuarioService.buscarUsuarioPorId(id);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
-
 
 }

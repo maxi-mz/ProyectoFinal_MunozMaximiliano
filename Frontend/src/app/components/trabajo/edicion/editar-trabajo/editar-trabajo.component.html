@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="titulo">titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="experiencia.titulo" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionE">Descripcion de sus estudios</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="experiencia.descripcion" required>
+                </div>
+                <div class="form-group">
+                    <label for="url">url</label>
+                    <input type="text" class="form-control" id="url" name="url" [(ngModel)]="experiencia.url" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaInicio">fechaInicio</label>
+                    <input type="number" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="experiencia.fechaInicio" required>
+                </div>
+                <div class="form-group">
+                    <label for="fechaFin">fechaFin</label>
+                    <input type="number" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="experiencia.fechaFin" required>
+                </div>
+                <button class="btn btn-primary">
+                    editar experiencia
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

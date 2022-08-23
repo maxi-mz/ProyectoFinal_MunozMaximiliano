@@ -15,7 +15,7 @@ export class SkillsService {
     return this.http.get<Skill[]>('http://localhost:8080/skill/listar');
   }
 
-  public updateSkill(skill:Skill):Observable<Skill>{
+  public actualizarSkill(skill:Skill):Observable<Skill>{
     return this.http.put<Skill>('http://localhost:8080/skill/actualizar',skill);
   }
 
@@ -25,5 +25,9 @@ export class SkillsService {
 
   public borrarSkill(id:number):Observable<void>{
     return this.http.delete<void>('http://localhost:8080/skill/borrar/id/' + id )
+  }
+
+  public obtenerPorId(id: number): Observable<Skill>{
+    return this.http.get<Skill>(`http://localhost:8080/skill/${id}`);
   }
 }

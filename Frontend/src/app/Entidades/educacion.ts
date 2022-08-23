@@ -1,4 +1,3 @@
-
 export class Educacion{
     id! : number;
     titulo!: string; 

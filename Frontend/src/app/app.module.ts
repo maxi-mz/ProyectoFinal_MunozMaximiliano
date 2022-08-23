@@ -15,6 +15,11 @@ import { FormsModule } from '@angular/forms';
 import { AgregarEducacionComponent } from './components/educacion/edicion/agregar-educacion/agregar-educacion.component';
 import { EditarEducacionComponent } from './components/educacion/edicion/editar-educacion/editar-educacion.component';
 import { HomeComponent } from './components/home/home.component';
+import { AgregarTrabajoComponent } from './components/trabajo/edicion/agregar-trabajo/agregar-trabajo.component';
+import { EditarTrabajoComponent } from './components/trabajo/edicion/editar-trabajo/editar-trabajo.component';
+import { EditarSkillComponent } from './components/skills/edicion/editar-skill/editar-skill.component';
+import { AgregarSkillComponent } from './components/skills/edicion/agregar-skill/agregar-skill.component';
+import { EditarUsuarioComponent } from './components/about/edicion/editar-usuario/editar-usuario.component';
 
 
 @NgModule({
@@ -29,7 +34,12 @@ import { HomeComponent } from './components/home/home.component';
     ProyectosComponent,
     AgregarEducacionComponent,
     EditarEducacionComponent,
-    HomeComponent
+    HomeComponent,
+    AgregarTrabajoComponent,
+    EditarTrabajoComponent,
+    EditarSkillComponent,
+    AgregarSkillComponent,
+    EditarUsuarioComponent
   ],
   imports: [
     BrowserModule,

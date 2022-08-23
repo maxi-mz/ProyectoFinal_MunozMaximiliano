@@ -1,7 +1,12 @@
 export class Skill{
-    idSkill!:number;
+    id!:number;
     porcentaje!: number;
     titulo!:string;
-    descripcion!:string;
     url!:string;
+
+    constructor(titulo:string,url:string,porcentaje:number){
+        this.porcentaje = porcentaje;
+        this.titulo = titulo;
+        this.url = url;
+    }
 }

@@ -1,6 +1,7 @@
 package com.portfolio.maximiliano.Controller;
 
 import com.portfolio.maximiliano.Entity.Skill;
+import com.portfolio.maximiliano.Entity.Skill;
 import com.portfolio.maximiliano.Services.SkillService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,4 +43,10 @@ public class SkillController {
         skillService.borrarSkill(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Skill> getById(@PathVariable("id")long id){
+        Skill skill = skillService.buscarSkillsPorId(id);
+        return new ResponseEntity(skill, HttpStatus.OK);
+    }
+
 }

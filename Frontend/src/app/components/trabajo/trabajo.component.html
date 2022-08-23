@@ -1,5 +1,8 @@
 <div class="text-center" id="titulo">
     Experiencias Laborales
+    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" >
+        Agregar trabajo
+    </button>
 </div>
 <div class="container my-5 ">
     <div class="row justify-content-center">
@@ -11,8 +14,15 @@
             <ul *ngFor="let experiencia of experiencias; let i = index" class="list-group">
                 <li class="list-group-item mb-4">
                     <h1>{{experiencia.titulo}}</h1>
-                    <h6>{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</h6>
                     <p> {{experiencia.descripcion}}</p>
+                    <h6>{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</h6>
+                    <img src="{{experiencia.url}}">
+                    <button type="button" class="btn btn-danger" (click)="borrarExperiencia(experiencia.id)" >
+                        <a>borrar experiencia</a>
+                    </button>
+                    <button type="button" class="btn btn-primary " routerLink="/editarexp/{{experiencia.id}}" >
+                        editar experiencia
+                    </button>
                 </li>
             </ul>
         </div>

@@ -11,11 +11,11 @@ export class ExperienciaService {
 
   constructor(private http:HttpClient) { }
 
-  public getExperiencia():Observable<Experiencia[]>{
+  public listarExperiencia():Observable<Experiencia[]>{
     return this.http.get<Experiencia[]>('http://localhost:8080/experiencia/listar');
   }
 
-  public updateExperiencia(experiencia:Experiencia):Observable<Experiencia>{
+  public actualizarExperiencia(experiencia:Experiencia):Observable<Experiencia>{
     return this.http.put<Experiencia>('http://localhost:8080/experiencia/actualizar',experiencia);
   }
 
@@ -25,5 +25,9 @@ export class ExperienciaService {
 
   public borrarExperiencia(id:number):Observable<void>{
     return this.http.delete<void>('http://localhost:8080/experiencia/borrar/id/' + id )
+  }
+
+  public obtenerPorId(id: number): Observable<Experiencia>{
+    return this.http.get<Experiencia>(`http://localhost:8080/experiencia/${id}`);
   }
 }
