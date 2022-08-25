@@ -36,7 +36,7 @@ public class EducacionService {
     }
 
     public Educacion buscarEducacionPorId(Long id){
-        return educacionRepo.findById(id).orElseThrow(()-> new EducacionNoEncontradoException("Usuario no encontrado"));
+        return educacionRepo.findById(id).orElseThrow(()-> new EducacionNoEncontradoException("About no encontrado"));
     }
 
 }

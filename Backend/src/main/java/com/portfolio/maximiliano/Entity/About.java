@@ -5,12 +5,12 @@ import java.io.Serializable;
 import java.util.*;
 
 @Entity
-public class Usuario implements Serializable {
+public class About implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false,updatable = false)
-    private Long idUsuario;
+    private Long idAbout;
     private String nombre;
     private String apellido;
     private String titulo;
@@ -26,11 +26,11 @@ public class Usuario implements Serializable {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "idSkill")
     private List<Skill> skillList;
 
-    public Usuario() {
+    public About() {
     }
 
-    public Usuario(Long idUsuario, String nombre, String apellido, String titulo, String descripcion, String url) {
-        this.idUsuario = idUsuario;
+    public About(Long idAbout, String nombre, String apellido, String titulo, String descripcion, String url) {
+        this.idAbout = idAbout;
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
@@ -39,11 +39,11 @@ public class Usuario implements Serializable {
     }
 
     public Long getId() {
-        return idUsuario;
+        return idAbout;
     }
 
-    public void setId(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(Long idAbout) {
+        this.idAbout = idAbout;
     }
 
     public String getNombre() {
