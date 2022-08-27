@@ -4,7 +4,7 @@
             <div class="text-center" id="titulo">
                 Skills
             </div>
-            <button type="button" class="btn btn-dark" routerLink="/nuevaskill" >
+            <button type="button" class="btn btn-dark" routerLink="/nuevaskill" *ngIf="isLogged">
                 Agregar skills
             </button>
         </div>
@@ -17,10 +17,10 @@
                 [imageWidth]="90"
             >
         </circle-progress>
-        <button type="button" class="btn btn-danger" (click)="borrarSkill(skill.id)" >
+        <button type="button" class="btn btn-danger" (click)="borrarSkill(skill.id)" *ngIf="isLogged">
             <a>borrar educacion</a>
         </button>
-        <button type="button" class="btn btn-primary " routerLink="/editarskill/{{skill.id}}" >
+        <button type="button" class="btn btn-primary " routerLink="/editarskill/{{skill.id}}" *ngIf="isLogged">
             editar Educacion
         </button>
         

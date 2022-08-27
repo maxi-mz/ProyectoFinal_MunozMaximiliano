@@ -1,6 +1,6 @@
 <div class="text-center" id="titulo">
     Experiencias Laborales
-    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" >
+    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
         Agregar trabajo
     </button>
 </div>
@@ -17,10 +17,10 @@
                     <p> {{experiencia.descripcion}}</p>
                     <h6>{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</h6>
                     <img src="{{experiencia.url}}">
-                    <button type="button" class="btn btn-danger" (click)="borrarExperiencia(experiencia.id)" >
+                    <button type="button" class="btn btn-danger" (click)="borrarExperiencia(experiencia.id)" *ngIf="isLogged">
                         <a>borrar experiencia</a>
                     </button>
-                    <button type="button" class="btn btn-primary " routerLink="/editarexp/{{experiencia.id}}" >
+                    <button type="button" class="btn btn-primary " routerLink="/editarexp/{{experiencia.id}}" *ngIf="isLogged">
                         editar experiencia
                     </button>
                 </li>

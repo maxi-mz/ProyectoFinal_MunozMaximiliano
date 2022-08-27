@@ -8,7 +8,8 @@
         <a type="a" class="btn mx-2" id="social" href="https://www.linkedin.com/in/maximiliano-muñoz/"><i class="bi bi-linkedin"></i></a>
         <a type="a" class="btn mx-2" id="social" href="https://www.instagram.com/maxi_mz/?hl=es"><i class="bi bi-instagram"></i></a>
         <a type="a" class="btn mx-2" id="social" href = "https://twitter.com/maxi_mz0"><i class="bi bi-twitter"></i></a>
-        <a type="a" class="btn ms-2" id="login" >Login</a> 
+        <a type="a" class="btn ms-2" id="login"  (click) ="login()"  *ngIf="!isLogged" >Login</a>
+        <a type="a" class="btn ms-2" id="login"  (click) ="logOut()" *ngIf="isLogged" >Logout</a>  
       </div>
     </div> 
   </nav>

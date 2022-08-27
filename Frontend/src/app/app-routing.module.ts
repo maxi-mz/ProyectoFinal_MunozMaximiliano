@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 import { EditarUsuarioComponent } from './components/about/edicion/editar-usuario/editar-usuario.component';
 import { EditarSkillComponent } from './components/skills/edicion/editar-skill/editar-skill.component';
 import { AgregarSkillComponent } from './components/skills/edicion/agregar-skill/agregar-skill.component';
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "editarexp/:id"       , component: EditarTrabajoComponent },
   { path: "nuevaskill"          , component: AgregarSkillComponent },
   { path: "editarskill/:id"     , component: EditarSkillComponent },
-  { path: "editarusuario/:id"   , component: EditarUsuarioComponent }
+  { path: "editarusuario/:id"   , component: EditarUsuarioComponent },
+  { path: "login"               , component: LoginComponent}
 ];
 
 @NgModule({

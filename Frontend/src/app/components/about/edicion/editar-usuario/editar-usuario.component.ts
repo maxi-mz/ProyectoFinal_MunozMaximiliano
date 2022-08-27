@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { AboutService } from './../../../../servicios/about.service';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/Entidades/usuario';
+import { About } from 'src/app/Entidades/About';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -10,7 +10,7 @@ import { Usuario } from 'src/app/Entidades/usuario';
 })
 export class EditarUsuarioComponent implements OnInit {
 
-  usuario!: Usuario;
+  about!: About;
   
   constructor(
     private aboutService :AboutService,
@@ -18,9 +18,9 @@ export class EditarUsuarioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.aboutService.getUsuario().subscribe(
+    this.aboutService.getAbout().subscribe(
       data =>{
-        this.usuario = data;
+        this.about = data;
       }, err =>{
          alert("Error al modificar");
          this.router.navigate(['']);
@@ -29,11 +29,11 @@ export class EditarUsuarioComponent implements OnInit {
   }
 
   onUpdate(): void{
-    this.aboutService.updateUsuario(this.usuario).subscribe(
+    this.aboutService.updateAbout(this.about).subscribe(
       data => {
         this.router.navigate(['']);
       }, err => {
-        alert("Error al modificar el usuario");
+        alert("Error al modificar el about me");
         this.router.navigate(['']);
       }
     )

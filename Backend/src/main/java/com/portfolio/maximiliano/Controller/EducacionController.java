@@ -5,6 +5,7 @@ import com.portfolio.maximiliano.Entity.Educacion;
 import com.portfolio.maximiliano.Services.EducacionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class EducacionController {
         this.educacionService = educacionService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/agregar")
     public ResponseEntity<Educacion> agregarEducacion(@RequestBody Educacion educacion){
         Educacion nuevaEducacion = educacionService.agregarEducacion(educacion);
@@ -32,12 +34,14 @@ public class EducacionController {
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/actualizar")
     public ResponseEntity<Educacion> editarEducacion(@RequestBody Educacion educacion){
         Educacion updateEducacion = educacionService.editarEducacion(educacion);
         return new ResponseEntity<>(updateEducacion,HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarEducacion(@PathVariable("id")Long id){
         educacionService.borrarEducacion(id);

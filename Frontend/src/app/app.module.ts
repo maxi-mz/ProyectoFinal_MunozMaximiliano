@@ -1,3 +1,4 @@
+import { interceptorProvider } from './servicios/interceptor.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { EditarTrabajoComponent } from './components/trabajo/edicion/editar-trab
 import { EditarSkillComponent } from './components/skills/edicion/editar-skill/editar-skill.component';
 import { AgregarSkillComponent } from './components/skills/edicion/agregar-skill/agregar-skill.component';
 import { EditarUsuarioComponent } from './components/about/edicion/editar-usuario/editar-usuario.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { EditarUsuarioComponent } from './components/about/edicion/editar-usuari
     EditarTrabajoComponent,
     EditarSkillComponent,
     AgregarSkillComponent,
-    EditarUsuarioComponent
+    EditarUsuarioComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,9 @@ import { EditarUsuarioComponent } from './components/about/edicion/editar-usuari
       "responsive": false,
       "percent":10})
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent],
   
 })

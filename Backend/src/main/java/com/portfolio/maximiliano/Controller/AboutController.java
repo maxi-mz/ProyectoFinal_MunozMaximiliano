@@ -4,6 +4,7 @@ import com.portfolio.maximiliano.Entity.About;
 import com.portfolio.maximiliano.Services.AboutService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +18,7 @@ public class AboutController {
         this.aboutService = aboutService;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/actualizar")
     public ResponseEntity<About> editarAbout(@RequestBody About about){
         About updateAbout = aboutService.editarAbout(about);

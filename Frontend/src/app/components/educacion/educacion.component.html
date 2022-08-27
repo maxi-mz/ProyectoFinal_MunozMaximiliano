@@ -1,6 +1,6 @@
 <div class="text-center" id="titulo">
     Educación
-    <button type="button" class="btn btn-dark" routerLink="/nuevaedu" >
+    <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
         Agregar Educacion
     </button>
 </div>
@@ -17,10 +17,10 @@
                     <h6>{{educacion.descripcion}}</h6>
                     <h6>{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>
                     <img src="{{educacion.url}}">
-                    <button type="button" class="btn btn-danger" (click)="borrarEducacion(educacion.id)" >
+                    <button type="button" class="btn btn-danger" (click)="borrarEducacion(educacion.id)" *ngIf="isLogged">
                         <a>borrar educacion</a>
                     </button>
-                    <button type="button" class="btn btn-primary " routerLink="/editaredu/{{educacion.id}}" >
+                    <button type="button" class="btn btn-primary " routerLink="/editaredu/{{educacion.id}}" *ngIf="isLogged">
                         editar Educacion
                     </button>
                 </li>

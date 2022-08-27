@@ -1,7 +1,7 @@
 import { EducacionService } from './../../servicios/educacion.service';
 import { Educacion } from './../../Entidades/educacion';
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -11,12 +11,17 @@ import { NgForm } from '@angular/forms';
 export class EducacionComponent implements OnInit {
 
   public educaciones:Educacion[] = [];
+  isLogged = false;
 
-
-  constructor( private educacionService:EducacionService) { }
+  constructor( private educacionService:EducacionService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.listarEducacion();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   public listarEducacion():void{

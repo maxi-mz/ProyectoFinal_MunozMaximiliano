@@ -1,23 +1,23 @@
 <div class="container">
     <div class="row">
-        <div *ngIf="usuario"  class="col-sm-4 ms-5 ps-5 mb-5"
+        <div *ngIf="about"  class="col-sm-4 ms-5 ps-5 mb-5"
             data-aos="fade-right"
             data-aos-offset="200"
             data-aos-once="true"
             data-aos-duration="2000" >
-                <img src="{{usuario.url}}" class="img-fluid foto mb-5 shadow">
-                <p class="ms-3" id="nombre"> {{usuario.nombre}} {{usuario.apellido}} </p>
+                <img src="{{about.url}}" class="img-fluid foto mb-5 shadow">
+                <p class="ms-3" id="nombre"> {{about.nombre}} {{about.apellido}} </p>
         </div>
-        <div *ngIf="usuario" class="col-sm-6  texto"
+        <div *ngIf="about" class="col-sm-6  texto"
             data-aos="fade-left"
             data-aos-offset="200"
             data-aos-once="true"
             data-aos-duration="2500" >
-            <h1 class="mb-5" >{{usuario.titulo}} </h1>
-            <p class="pt-2" id="descripcion" >{{usuario.descripcion}}</p>
+            <h1 class="mb-5" >{{about.titulo}} </h1>
+            <p class="pt-2" id="descripcion" >{{about.descripcion}}</p>
         </div>
-        <button type="button" class="btn btn-primary " routerLink="/editarusuario/1" >
-            editar usuario
+        <button type="button" class="btn btn-primary " routerLink="/editarusuario/1" *ngIf="isLogged" >
+            editar about
         </button>
     </div>
 </div>

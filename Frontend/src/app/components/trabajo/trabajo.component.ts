@@ -1,6 +1,7 @@
 import { ExperienciaService } from './../../servicios/experiencia.service';
 import { Experiencia } from './../../Entidades/experiencia';
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-trabajo',
@@ -10,11 +11,17 @@ import { Component, OnInit } from '@angular/core';
 export class TrabajoComponent implements OnInit {
 
   public experiencias:Experiencia[] =[];
+  isLogged = false;
 
-  constructor(private experienciaService:ExperienciaService) { }
+  constructor(private experienciaService:ExperienciaService , private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.listarExperiencia();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
   public listarExperiencia(){

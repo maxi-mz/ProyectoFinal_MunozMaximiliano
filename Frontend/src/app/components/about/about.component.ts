@@ -1,7 +1,7 @@
+import { About } from '../../Entidades/About';
 import { AboutService } from './../../servicios/about.service';
 import { Component, OnInit } from '@angular/core';
-import { Usuario } from 'src/app/Entidades/usuario';
-import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-about',
@@ -10,18 +10,23 @@ import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 })
 export class AboutComponent implements OnInit {
 
-  public usuario : Usuario | undefined ;
-  public editUsuario: Usuario | undefined;
-  public nombre: String | undefined;
-  constructor(private aboutService: AboutService) { }
+  public about : About | undefined ;
+  isLogged = false;
+
+  constructor(private aboutService: AboutService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
-    this.getUsuario();
+    this.getAbout();
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+    }else{
+      this.isLogged = false;
+    }
   }
 
-  public getUsuario():void{
-    this.aboutService.getUsuario().subscribe(dato =>{
-      this.usuario = dato
+  public getAbout():void{
+    this.aboutService.getAbout().subscribe(dato =>{
+      this.about = dato
     })
 
     
