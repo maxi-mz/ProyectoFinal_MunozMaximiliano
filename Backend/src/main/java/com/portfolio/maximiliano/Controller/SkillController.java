@@ -5,6 +5,7 @@ import com.portfolio.maximiliano.Entity.Skill;
 import com.portfolio.maximiliano.Services.SkillService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public class SkillController {
     public SkillController(SkillService skillService) {
         this.skillService = skillService;
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/agregar")
     public ResponseEntity<Skill> agregarSkills(@RequestBody Skill skill){
         Skill nuevaSkill = skillService.agregarSkill(skill);
@@ -31,13 +32,13 @@ public class SkillController {
         List<Skill> skills = skillService.buscarSkill();
         return new ResponseEntity<>(skills, HttpStatus.OK);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/actualizar")
     public ResponseEntity<Skill> editarSkills(@RequestBody Skill skill){
         Skill updateSkill = skillService.editarSkill(skill);
         return new ResponseEntity<>(updateSkill,HttpStatus.OK);
     }
-
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarSkills(@PathVariable("id")Long id){
         skillService.borrarSkill(id);

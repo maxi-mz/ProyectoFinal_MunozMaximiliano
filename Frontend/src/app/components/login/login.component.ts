@@ -12,7 +12,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class LoginComponent implements OnInit {
 
   isLogged = false;
-  isLogginFail = false;
+  fallo_ingreso = false;
   loginUsuario!: LoginUsuario;
   nombreUsuario!: string;
   password! : string;
@@ -21,10 +21,12 @@ export class LoginComponent implements OnInit {
 
   constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
 
+  credenciales_incorrectas: boolean = false;
+
   ngOnInit(): void {
     if(this.tokenService.getToken()){
       this.isLogged = true;
-      this.isLogginFail = false;
+      this.fallo_ingreso = false;
       this.roles = this.tokenService.getAuthorities();
     }
   }
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password); 
     this.authService.login(this.loginUsuario).subscribe(data =>{
         this.isLogged = true;
-        this.isLogginFail = false;
+        this.fallo_ingreso = false;
         this.tokenService.setToken(data.token);
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
@@ -41,10 +43,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate([''])
       }, err =>{
         this.isLogged = false;
-        this.isLogginFail = true;
-        this.errMsj = err.error.mensaje;
-        console.log(this.errMsj);
-        
+        this.fallo_ingreso = true;  
       })
   }
 
