@@ -30,8 +30,6 @@ public class Experiencia implements Serializable {
         this.fechaFin = fechaFin;
     }
 
-
-
     public Long getId() {
         return idExp;
     }

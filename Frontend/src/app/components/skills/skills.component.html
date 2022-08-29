@@ -3,13 +3,26 @@
         <div class="col-12 mt-4">
             <div class="text-center" id="titulo">
                 Skills
+                <button type="button" class="btn btn-lg  botones" routerLink="/nuevaskill" *ngIf="isLogged" >
+                    <i class="bi bi-plus-square"></i>
+                </button>
             </div>
-            <button type="button" class="btn btn-dark" routerLink="/nuevaskill" *ngIf="isLogged">
-                Agregar skills
-            </button>
+            
         </div>
-        <div *ngFor="let skill of skills; let i = index" class="col-sm-3 my-5"> 
-            <circle-progress
+        <div *ngFor="let skill of skills; let i = index" class="col-sm-3 my-5" 
+                data-aos="zoom-out"
+                data-aos-offset="200"
+                data-aos-once="true"
+                data-aos-duration="1750">
+
+            <button type="button" class=" me-5 btn btn-lg botones" routerLink="/editarskill/{{skill.id}}" *ngIf="isLogged" >
+                <i class="bi bi-pencil"></i>
+            </button>
+            <button type="button" class=" btn btn-lg botones" (click)="borrarSkill(skill.id)" *ngIf="isLogged">
+                <i class="bi bi-trash"></i>
+            </button>
+
+            <circle-progress 
                 [percent]="skill.porcentaje"
                 [showImage]="true"
                 [imageSrc]="skill.url"
@@ -17,12 +30,6 @@
                 [imageWidth]="90"
             >
         </circle-progress>
-        <button type="button" class="btn btn-danger" (click)="borrarSkill(skill.id)" *ngIf="isLogged">
-            <a>borrar educacion</a>
-        </button>
-        <button type="button" class="btn btn-primary " routerLink="/editarskill/{{skill.id}}" *ngIf="isLogged">
-            editar Educacion
-        </button>
         
         </div>
     </div>

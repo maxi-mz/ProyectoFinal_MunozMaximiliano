@@ -1,28 +1,37 @@
-<div class="text-center" id="titulo">
-    Experiencias Laborales
-    <button type="button" class="btn btn-dark" routerLink="/nuevaexp" *ngIf="isLogged">
-        Agregar trabajo
+<div class="text-center " id="titulo">
+    Experiencias
+    <button type="button" class="btn btn-lg  agregar" routerLink="/nuevaexp" *ngIf="isLogged" >
+        <i class="bi bi-plus-square"></i>
     </button>
 </div>
-<div class="container my-5 ">
-    <div class="row justify-content-center">
-        <div class="col-lg-9"
-            data-aos="zoom-in"
-            data-aos-offset="100"
-            data-aos-once="true"
-            data-aos-duration="1750" >
-            <ul *ngFor="let experiencia of experiencias; let i = index" class="list-group">
-                <li class="list-group-item mb-4">
-                    <h1>{{experiencia.titulo}}</h1>
-                    <p> {{experiencia.descripcion}}</p>
-                    <h6>{{experiencia.fechaInicio}} - {{experiencia.fechaFin}}</h6>
-                    <img src="{{experiencia.url}}">
-                    <button type="button" class="btn btn-danger" (click)="borrarExperiencia(experiencia.id)" *ngIf="isLogged">
-                        <a>borrar experiencia</a>
-                    </button>
-                    <button type="button" class="btn btn-primary " routerLink="/editarexp/{{experiencia.id}}" *ngIf="isLogged">
-                        editar experiencia
-                    </button>
+<div class="container mt-5 fuente " >
+    <div class="row justify-content-center ">
+        <div class="col-lg-9 ">
+            <ul class="list-group " >
+                <li *ngFor="let experiencia of experiencias; let i = index"
+                class="list-group-item mb-4 fondo rounded-pill mt-5"
+                data-aos="zoom-in"
+                data-aos-offset="100"
+                data-aos-once="true"
+                data-aos-duration="1750" >
+                    <div class="row ms-5">
+                        <div class="col-2 align-self-center">
+                            <img src="{{experiencia.url}}" class="img-fluid " >
+                        </div>
+                        <div class="col-10">
+                            <h3 class="mt-4 mx-4">{{experiencia.titulo}}</h3>
+                            <h6 class="my-4 mx-4">{{experiencia.descripcion}}</h6>
+                            <h6 class="mb-4 mx-4">{{experiencia.fechaInicio}} - {{experiencia.fechaFin}} </h6>        
+                        </div>
+                    </div>
+                    <div class="text-center me-4 ">
+                        <button type="button" class="btn btn-lg mx-4 " routerLink="/editarexp/{{experiencia.id}}" *ngIf="isLogged">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-lg " (click)="borrarExperiencia(experiencia.id)" *ngIf="isLogged">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
                 </li>
             </ul>
         </div>

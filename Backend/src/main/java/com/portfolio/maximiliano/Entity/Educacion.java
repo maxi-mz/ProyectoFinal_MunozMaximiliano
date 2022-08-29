@@ -17,6 +17,7 @@ public class Educacion implements Serializable {
     private int fechaInicio;
     private int fechaFin;
 
+
     public Educacion() {
     }
 
@@ -27,8 +28,8 @@ public class Educacion implements Serializable {
         this.url = url;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-    }
 
+    }
 
 
     public Long getId() {

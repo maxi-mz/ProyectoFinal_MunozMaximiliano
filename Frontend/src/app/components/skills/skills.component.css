@@ -7,3 +7,12 @@
     font-size: 2rem;
     color:#FFA500;
 }
+
+.botones{
+    color: #AB8B67;
+}
+
+.botones:hover{
+    color: #FFA500;
+}
+

@@ -1,4 +1,13 @@
-Arreglar versión mobile del header
-Arreglar animación del header en mobile (Ver video en guardar más tarde sobre tamaños de fuentes)
+Prioridad alta:
+
 Diferenciación entre cursos y estudios formales
-Front end experiencia y educacion
+Posibilidad de solo tener fecha de inicio y escribir "actualmente"
+Pantallas del back
+Back y front de "proyectos"
+
+
+De menor prioridad:
+Login centrado cuando está en mobile pequeño
+ordenar de mayor a menor las habilidades
+Logo de ingles en blanco
+Quitar marca de agua en san pio

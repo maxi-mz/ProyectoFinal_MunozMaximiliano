@@ -3,3 +3,37 @@
     font-size: 2rem;
     color:#FFA500;
 }
+
+#titulo{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+    color:#FFA500;
+}
+
+.fuente{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.fondo{
+    background-color: #AB8B67;
+}
+
+.borde{
+    border: red solid 3px;
+}
+
+.agregar{
+    color: #AB8B67;
+}
+
+.agregar:hover{
+    color: #FFA500;
+}
+
+.editarYborrar{
+    color: #402E32 ;
+}
+.editarYborrar:hover{
+    color: #FFA500;
+    border: none;
+}

@@ -1,18 +1,10 @@
-#fondo{
-    height: 385px;
-}
-
-.borde{
-    border: red solid 2px;
-}
-
 #texto{
     font-family: 'Roboto Mono', monospace;
     color:#E5ECE9;
 }
 
 #titulo{
-    font-size: 4.5rem;
+    font-size: clamp(2rem, 9.9vw, 4.5rem);
 }
 
 #nombre{
@@ -20,7 +12,7 @@
 }
 
 #subtitulo{
-    font-size: 2rem;
+    font-size: clamp(1rem, 2.5vw, 2rem); 
     opacity: 0;
     transform: translateY(3rem);
     animation: aparecer 2s ease 5.5s forwards;

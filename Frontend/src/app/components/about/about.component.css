@@ -6,20 +6,39 @@
     border-color: #402E32;
     border-width: 4px;
     filter: grayscale(100%);
-    transition: all 1s;
+    transition: all 1.3s;
+    animation: crecer_achicar 5s ease-out infinite normal ;
 }
 
 .foto:hover{
-    transform: rotate(360deg);
+    transform: rotate(360deg) ; 
     filter: grayscale(0%);
     border-color:#FFA500;
 }
 
 .texto{
     font-family: 'Roboto Mono', monospace;
-    
 }
-#nombre{
-    font-size: 1.28rem;
+
+.resumen{
+font-size: clamp(0.7rem, 10vw,1.6rem);
+}
+
+#descripcion{
+    font-size: clamp(0.5rem, 10vw,1.1rem);
+    line-height:2;
+
+}
+
+@keyframes crecer_achicar {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.15);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 

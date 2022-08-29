@@ -1,28 +1,38 @@
-<div class="text-center" id="titulo">
+<div class="text-center mt-5 " id="titulo">
     Educación
-    <button type="button" class="btn btn-dark" routerLink="/nuevaedu" *ngIf="isLogged">
-        Agregar Educacion
+    <button type="button" class="btn btn-lg  agregar" routerLink="/nuevaedu" *ngIf="isLogged" >
+        <i class="bi bi-plus-square"></i>
     </button>
 </div>
-<div class="container mt-5 ">
+<div class="container mt-5 fuente" >
     <div class="row justify-content-center">
-        <div class="col-lg-9" 
-            data-aos="zoom-in"
-            data-aos-offset="100"
-            data-aos-once="true"
-            data-aos-duration="1750">
-            <ul class="list-group">
-                <li *ngFor="let educacion of educaciones; let i = index" class="list-group-item mb-4">
-                    <h1>{{educacion.titulo}}</h1>
-                    <h6>{{educacion.descripcion}}</h6>
-                    <h6>{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>
-                    <img src="{{educacion.url}}">
-                    <button type="button" class="btn btn-danger" (click)="borrarEducacion(educacion.id)" *ngIf="isLogged">
-                        <a>borrar educacion</a>
-                    </button>
-                    <button type="button" class="btn btn-primary " routerLink="/editaredu/{{educacion.id}}" *ngIf="isLogged">
-                        editar Educacion
-                    </button>
+        <div class="col-lg-9 " >
+            <ul class="list-group " >
+                <li *ngFor="let educacion of educaciones; let i = index" 
+                class="list-group-item mb-4 fondo rounded-pill mt-5" 
+                data-aos="zoom-in"
+                data-aos-offset="100"
+                data-aos-once="true"
+                data-aos-duration="1750">
+                    <div class="row ms-5">
+                        <div class="col-2 align-self-center">
+                            <img src="{{educacion.url}}" class="img-fluid " >
+                        </div>
+                        <div class="col-10">
+                            <h3 class="mt-4 mx-4">{{educacion.titulo}}</h3>
+                            <h6 class="my-4 mx-4">{{educacion.descripcion}}</h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaInicio != educacion.fechaFin">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaInicio == educacion.fechaFin">{{educacion.fechaInicio}}  </h6>        
+                        </div>
+                    </div>
+                    <div class="text-center me-4 ">
+                        <button type="button" class="btn btn-lg mx-4 " routerLink="/editaredu/{{educacion.id}}" *ngIf="isLogged">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+                        <button type="button" class="btn btn-lg " (click)="borrarEducacion(educacion.id)" *ngIf="isLogged">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
                 </li>
             </ul>
         </div>

@@ -67,8 +67,8 @@ import { LoginComponent } from './components/login/login.component';
       "showUnits": false,
       "showImage": true,
       "showBackground": false,
-      "responsive": false,
-      "percent":10})
+      "responsive": false
+      })
   ],
   providers: [
     interceptorProvider

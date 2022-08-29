@@ -23,7 +23,7 @@ export class AgregarSkillComponent implements OnInit {
     const educacion = new Skill(this.titulo,this.url,this.porcentaje);
     this.SkillsService.agregarSkill(educacion).subscribe(
       data =>{
-        alert("Educacion añadida correctamente");
+        alert("Skill añadida correctamente");
         this.router.navigate(['']);
       }, err =>{
         alert("falló");
