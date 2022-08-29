@@ -1,7 +1,7 @@
 Prioridad alta:
 
 Diferenciación entre cursos y estudios formales
-Posibilidad de solo tener fecha de inicio y escribir "actualmente"
+escribir "actualmente"
 Pantallas del back
 Back y front de "proyectos"
 

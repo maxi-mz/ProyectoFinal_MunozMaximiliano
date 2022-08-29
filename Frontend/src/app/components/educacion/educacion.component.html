@@ -21,8 +21,8 @@
                         <div class="col-10">
                             <h3 class="mt-4 mx-4">{{educacion.titulo}}</h3>
                             <h6 class="my-4 mx-4">{{educacion.descripcion}}</h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaInicio != educacion.fechaFin">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaInicio == educacion.fechaFin">{{educacion.fechaInicio}}  </h6>        
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0">{{educacion.fechaInicio}} </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin!=0">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>          
                         </div>
                     </div>
                     <div class="text-center me-4 ">
