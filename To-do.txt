@@ -1,16 +1,8 @@
 Prioridad alta:
-
-Diferenciación entre cursos y estudios formales
-escribir "actualmente"
 Back y front de "proyectos"
 
-
 De menor prioridad:
-Login centrado cuando está en mobile pequeño
-Ordenar de mayor a menor las habilidades
-Logo de ingles en blanco
-Quitar marca de agua en san pio
-Mantener color en botones de curso
 
 ULTIMO A HACER ANTES DEL DEPLOY
 TESTEAR CADA BOTÓN CON CADA EDICIÓN POSIBLE!
+DESCARGAR CADA PDF QUE HAYA EN EL CAMPUS!!!

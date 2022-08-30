@@ -1,31 +1,50 @@
-<div class="container">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="about.nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="apellido">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="about.apellido" required>
-                </div>
-                <div class="form-group">
-                    <label for="titulo">titulo</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="about.titulo" required>
-                </div>
-                <div class="form-group">
-                    <label for="descripcion">descripcion</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="about.descripcion" required>
-                </div>
-                <div class="form-group">
-                    <label for="url">url</label>
-                    <input type="text" class="form-control" id="url" name="url" [(ngModel)]="about.url" required>
-                </div>
-                <button class="btn btn-primary">
-                    editar about
+<section class="vh-100 fondo">
+    <div class="container py-5 h-100 ">
+      <div class="row d-flex justify-content-center align-items-center h-100 ">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 ">
+              <div class="text-start mb-5">
+                <button class="btn " routerLink="/">
+                  <i class="bi bi-arrow-90deg-left "></i>
                 </button>
-            </form>
+              </div>
+              <div class="mb-md-4 mt-md-3 text-start">
+                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                  <div class="form-group mt-2">
+                    <label class="form-label" for="nombre">nombre</label>
+                    <input class="form-control form-control-lg" type="text" class="form-control" id="nombre" name="nombre"
+                      [(ngModel)]="about.nombre" required>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" class="form-control" id="apellido" name="apellido"
+                      [(ngModel)]="about.apellido" required>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="titulo">titulo</label>
+                    <input type="text" class="form-control" id="titulo" name="titulo"
+                      [(ngModel)]="about.titulo" required>
+                  </div>
+                  <div class="form-group my-4">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion"
+                      [(ngModel)]="about.descripcion" required>
+                  </div>
+                  <div class="form-group mt-4">
+                    <label for="url">Url</label>
+                    <input type="text" class="form-control" id="url" name="url" [(ngModel)]="about.url" required>
+                  </div>
+                  <div class="text-center">
+                    <button class="btn ">
+                      Editar educación
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </section>

@@ -49,4 +49,11 @@ export class EditarEducacionComponent implements OnInit {
     this.educacion.curso = 0;
   }
 
+  cancelar(){
+    this.educacion.actual = 0;
+  }
+
+  confirmar(){
+    this.educacion.actual = 1;
+  }
 }

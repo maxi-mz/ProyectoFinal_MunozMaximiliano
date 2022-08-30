@@ -1,3 +1,5 @@
+import { AgregarProyectoComponent } from './components/proyectos/edicion/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './components/proyectos/edicion/editar-proyecto/editar-proyecto.component';
 import { LoginComponent } from './components/login/login.component';
 import { EditarUsuarioComponent } from './components/about/edicion/editar-usuario/editar-usuario.component';
 import { EditarSkillComponent } from './components/skills/edicion/editar-skill/editar-skill.component';
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: "nuevaskill"          , component: AgregarSkillComponent },
   { path: "editarskill/:id"     , component: EditarSkillComponent },
   { path: "editarusuario/:id"   , component: EditarUsuarioComponent },
-  { path: "login"               , component: LoginComponent}
+  { path: "login"               , component: LoginComponent},
+  { path: "editarproyecto/:id"  , component: EditarProyectoComponent},
+  { path: "nuevoproyecto"       , component: AgregarProyectoComponent}
 ];
 
 @NgModule({

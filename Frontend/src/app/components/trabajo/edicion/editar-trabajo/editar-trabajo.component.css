@@ -10,3 +10,7 @@
 .btn:hover{
     color: #402E32;
 }
+
+.btn:focus{
+    color:#402E32;
+}

@@ -1,53 +1,78 @@
 <section class="vh-100 fondo">
-    <div class="container py-5 h-100 ">
-      <div class="row d-flex justify-content-center align-items-center h-100 ">
-        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-          <div class="card bg-dark text-white" style="border-radius: 1rem;">
-            <div class="card-body p-5 ">
-                <div class="text-end">
-                    <button class="btn " routerLink="/">
-                        <i class="bi bi-x-circle "></i>
-                    </button>
+  <div class="container py-5 h-100 ">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+            <div class="text-start mb-5">
+              <button class="btn " routerLink="/">
+                <i class="bi bi-arrow-90deg-left "></i>
+              </button>
+            </div>
+            <div>
+              <div class="row mb-4">
+                <div class="col">
+                  <span class="me-3">Es un curso  ?</span>
                 </div>
-              <div class="mb-md-4 mt-md-3 text-start">
-                <label class="form-label mb-2">Seleccione:</label>
-                <div>
-                  <button class="btn me-4" (click)="curso()" id="curso">
-                    Curso
+                <div class="col">
+                  <button class="btn" *ngIf="educacion.curso" (click)="educacion_formal()">
+                    <i class="bi bi-check-circle"></i>
                   </button>
-                  <button class="btn" (click)="educacion_formal()" id="educacion_formal">
-                    Educacion formal
+                  <button class="btn" *ngIf="!educacion.curso" (click)="curso()">
+                    <i class="bi bi-x-circle"></i>
                   </button>
                 </div>
-                <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
-                    <div class="form-group mt-2">
-                        <label class="form-label" for="titulo">Titulo</label>
-                        <input class="form-control form-control-lg"type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="educacion.titulo" required>
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="descripcionE">Descripción</label>
-                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="educacion.descripcion" required>
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="url">Url</label>
-                        <input type="text" class="form-control" id="url" name="url" [(ngModel)]="educacion.url" required>
-                    </div>
-                    <div class="form-group mt-4">
-                        <label for="fechaInicio">fechaInicio</label>
-                        <input type="number" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="educacion.fechaInicio" required>
-                    </div>
-                    <div class="form-group my-4">
-                        <label for="fechaFin">fechaFin</label>
-                        <input type="number" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="educacion.fechaFin" required>
-                    </div>
-                    <button class="btn ">
-                        Editar educacion
-                    </button>
-                </form>
               </div>
+              <div class="row">
+                <div class="col">
+                  <span class="me-2">Actualmente cursando?</span>
+                </div>
+                <div class="col">
+                  <button class="btn" *ngIf="educacion.actual" (click)="cancelar()">
+                    <i class="bi bi-check-circle"></i>
+                  </button>
+                  <button class="btn" *ngIf="!educacion.actual" (click)="confirmar()">
+                    <i class="bi bi-x-circle"></i>
+                  </button>
+                </div>
+              </div>     
+            </div>
+            <div class="mb-md-4 mt-md-3 text-start">
+              <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group mt-2">
+                  <label class="form-label" for="titulo">Titulo</label>
+                  <input class="form-control form-control-lg" type="text" class="form-control" id="titulo" name="titulo"
+                    [(ngModel)]="educacion.titulo" required>
+                </div>
+                <div class="form-group mt-4">
+                  <label for="descripcionE">Descripción</label>
+                  <input type="text" class="form-control" id="descripcion" name="descripcion"
+                    [(ngModel)]="educacion.descripcion" required>
+                </div>
+                <div class="form-group mt-4">
+                  <label for="url">Url</label>
+                  <input type="text" class="form-control" id="url" name="url" [(ngModel)]="educacion.url" required>
+                </div>
+                <div class="form-group mt-4">
+                  <label for="fechaInicio">fecha de inicio</label>
+                  <input type="number" class="form-control" id="fechaInicio" name="fechaInicio"
+                    [(ngModel)]="educacion.fechaInicio" required>
+                </div>
+                <div class="form-group my-4">
+                  <label for="fechaFin">fecha de finalización</label>
+                  <input type="number" class="form-control" id="fechaFin" name="fechaFin"
+                    [(ngModel)]="educacion.fechaFin" required>
+                </div>
+                <div class="text-center">
+                  <button class="btn ">
+                    Editar educación
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

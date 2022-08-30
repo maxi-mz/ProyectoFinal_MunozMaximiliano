@@ -22,6 +22,8 @@ import { EditarSkillComponent } from './components/skills/edicion/editar-skill/e
 import { AgregarSkillComponent } from './components/skills/edicion/agregar-skill/agregar-skill.component';
 import { EditarUsuarioComponent } from './components/about/edicion/editar-usuario/editar-usuario.component';
 import { LoginComponent } from './components/login/login.component';
+import { AgregarProyectoComponent } from './components/proyectos/edicion/agregar-proyecto/agregar-proyecto.component';
+import { EditarProyectoComponent } from './components/proyectos/edicion/editar-proyecto/editar-proyecto.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { LoginComponent } from './components/login/login.component';
     EditarSkillComponent,
     AgregarSkillComponent,
     EditarUsuarioComponent,
-    LoginComponent
+    LoginComponent,
+    AgregarProyectoComponent,
+    EditarProyectoComponent
   ],
   imports: [
     BrowserModule,

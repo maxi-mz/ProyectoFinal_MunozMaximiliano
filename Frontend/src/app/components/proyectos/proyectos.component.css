@@ -1,0 +1,33 @@
+#fondo{
+    background-color: #AB8B67 ;
+}
+
+#titulo{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2rem;
+    color:#402E32 ;
+}
+
+.botones{
+    color: #AB8B67;
+}
+
+.botones:hover{
+    color: #FFA500;
+}
+
+.proyecto{
+    background-color: #402E32;
+}
+
+.fuente{
+    font-family: 'Roboto Mono', monospace;
+}
+
+.naranja{
+    color: #FFA500;
+}
+
+.blanco{
+    color:#E5ECE9;
+}

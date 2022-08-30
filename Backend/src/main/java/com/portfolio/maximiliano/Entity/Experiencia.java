@@ -18,16 +18,27 @@ public class Experiencia implements Serializable {
     private int fechaInicio;
     private int fechaFin;
 
+    private int actual;
+
     public Experiencia() {
 
     }
-    public Experiencia(Long idExp, String titulo, String descripcion, String url, int fechaInicio, int fechaFin) {
+    public Experiencia(Long idExp, String titulo, String descripcion, String url, int fechaInicio, int fechaFin, int actual) {
         this.idExp = idExp;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.actual = actual;
+    }
+
+    public int getActual() {
+        return actual;
+    }
+
+    public void setActual(int actual) {
+        this.actual = actual;
     }
 
     public Long getId() {

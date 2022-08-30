@@ -1,1 +1,44 @@
-<p>proyectos works!</p>
+<div class="container py-5 mb-5">
+    <div class="row text-center rounded-5 mx-2 my-5" id="fondo">
+        <div class="col-12 mt-4">
+            <div class="text-center my-5" id="titulo">
+                <h1>Proyectos</h1>
+                <button type="button" class="btn btn-lg  agregar" routerLink="/nuevoproyecto" *ngIf="isLogged" >
+                    <i class="bi bi-plus-square"></i>
+                </button>
+            </div>
+            <div class="row pb-5 ">
+                <div class="col-sm-6 " *ngFor="let proyecto of proyectos; let i = index" >
+                    <div class="row proyecto  rounded-3 text-center mx-auto my-4">
+                            <div class="col-sm-6">
+                                <img src="{{proyecto.foto}}" class="img-fluid my-4">
+                            </div>
+                            <div class="col-sm-6 fuente my-4">
+                                <h3 class="naranja">{{proyecto.titulo}}</h3>
+                                <p class="blanco" >{{proyecto.descripcion}}</p>
+                                <p class="blanco" >{{proyecto.fecha}}</p>
+                                <button type="button" class="btn btn-lg botones" routerLink="/">
+                                    <i class="bi bi-arrow-up-right-circle-fill"></i>
+                                </button>
+                        </div>
+                        <div class="text-center me-4 ">
+                            <button type="button" class="btn btn-lg mx-4 botones" routerLink="/editarproyecto/{{proyecto.id}}" *ngIf="isLogged">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                            <button type="button" class="btn btn-lg botones" (click)="borrarProyecto(proyecto.id)" *ngIf="isLogged">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-5 pt-5">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path 
+            fill="#AB8B67" fill-opacity="1" d="M0,256L120,261.3C240,267,480,277,720,240C960,203,1200,117,1320,74.7L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+        </path>
+    </svg>
+</div>

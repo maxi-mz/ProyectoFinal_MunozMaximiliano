@@ -1,0 +1,46 @@
+<section class="vh-100 fondo">
+    <div class="container py-5 h-100 ">
+      <div class="row d-flex justify-content-center align-items-center h-100 ">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 ">
+                <div class="text-start">
+                    <button class="btn " routerLink="/">
+                        <i class="bi bi-arrow-90deg-left "></i>
+                    </button>
+                </div>
+              <div class="mb-md-4 mt-md-3 text-start">
+                <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                    <div class="form-group mt-2">
+                        <label class="form-label" for="titulo">Titulo</label>
+                        <input class="form-control form-control-lg"type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="descripcionE">Descripción</label>
+                        <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="fecha">fecha</label>
+                        <input type="number" class="form-control" id="fecha" name="fecha" [(ngModel)]="fecha" required>
+                    </div>
+                    <div class="form-group mt-4">
+                        <label for="url">Url del proyecto</label>
+                        <input type="text" class="form-control" id="url" name="url" [(ngModel)]="url" required>
+                    </div>
+                    <div class="form-group my-4">
+                        <label for="foto">Url de foto del proyecto</label>
+                        <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="foto" required>
+                    </div>
+                    <div class="text-center">
+                      <button class="btn ">
+                        Agregar proyecto
+                      </button>
+                    </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

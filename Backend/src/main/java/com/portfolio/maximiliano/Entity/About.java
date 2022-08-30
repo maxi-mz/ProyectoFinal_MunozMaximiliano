@@ -26,6 +26,9 @@ public class About implements Serializable {
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "idSkill")
     private List<Skill> skillList;
 
+    @OneToMany(fetch = FetchType.LAZY,mappedBy = "idPr")
+    private List<Proyecto> proyectoList;
+
     public About() {
     }
 

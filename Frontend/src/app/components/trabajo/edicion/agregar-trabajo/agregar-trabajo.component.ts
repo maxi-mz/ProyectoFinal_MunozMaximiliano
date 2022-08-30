@@ -15,6 +15,7 @@ export class AgregarTrabajoComponent implements OnInit {
   url!:string ;
   fechaInicio!:number;
   fechaFin!:number;
+  actual!:number;
 
   constructor(private experienciaService: ExperienciaService, private router:Router) { }
 
@@ -22,7 +23,7 @@ export class AgregarTrabajoComponent implements OnInit {
   }
 
   onCreate(): void{
-    const experiencia = new Experiencia(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin);
+    const experiencia = new Experiencia(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin,this.actual);
     this.experienciaService.agregarExperiencia(experiencia).subscribe(
       data =>{
         alert("Experiencia añadida correctamente");
@@ -34,4 +35,12 @@ export class AgregarTrabajoComponent implements OnInit {
     )
   }
 
+  cancelar(){
+    this.actual = 0;
+  }
+
+  confirmar(){
+    this.actual = 1;
+  }
+  
 }

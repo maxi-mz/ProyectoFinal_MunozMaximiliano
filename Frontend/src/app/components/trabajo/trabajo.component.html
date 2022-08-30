@@ -9,20 +9,21 @@
         <div class="col-lg-9 ">
             <ul class="list-group " >
                 <li *ngFor="let experiencia of experiencias; let i = index"
-                class="list-group-item mb-4 fondo rounded-pill mt-5"
+                class="list-group-item mb-4 fondo rounded-5 mt-5 mx-4"
                 data-aos="zoom-in"
                 data-aos-offset="100"
                 data-aos-once="true"
                 data-aos-duration="1750" >
-                    <div class="row ms-5">
-                        <div class="col-2 align-self-center">
+                    <div class="row ms-sm-5 " >
+                        <div class="col-sm-2 align-self-center">
                             <img src="{{experiencia.url}}" class="img-fluid " >
                         </div>
-                        <div class="col-10">
+                        <div class="col-sm-10">
                             <h3 class="mt-4 mx-4">{{experiencia.titulo}}</h3>
                             <h6 class="my-4 mx-4">{{experiencia.descripcion}}</h6>
-                            <h6 class="mb-4 mx-4" *ngIf="experiencia.fechaFin==0">{{experiencia.fechaInicio}} </h6>
-                            <h6 class="mb-4 mx-4" *ngIf="experiencia.fechaFin!=0">{{experiencia.fechaInicio}} - {{experiencia.fechaFin}} </h6>        
+                            <h6 class="mb-4 mx-4" *ngIf="experiencia.fechaFin==0 && !experiencia.actual">{{experiencia.fechaInicio}} </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="experiencia.fechaFin==0 &&  experiencia.actual">{{experiencia.fechaInicio}} - actual </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="experiencia.fechaFin!=0">{{experiencia.fechaInicio}} - {{experiencia.fechaFin}} </h6>         
                         </div>
                     </div>
                     <div class="text-center me-4 ">

@@ -16,6 +16,7 @@ export class AgregarEducacionComponent implements OnInit {
   fechaInicio!:number;
   fechaFin!:number;
   curso!:number;
+  actual!:number;
 
   constructor(private educacionService: EducacionService, private router:Router) { }
 
@@ -23,13 +24,13 @@ export class AgregarEducacionComponent implements OnInit {
   }
 
   onCreate(): void{
-    const educacion = new Educacion(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin,this.curso);
+    const educacion = new Educacion(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin,this.curso,this.actual);
     this.educacionService.agregarEducacion(educacion).subscribe(
       data =>{
         alert("Educacion añadida correctamente");
         this.router.navigate(['']);
       }, err =>{
-        alert("falló");
+        alert("Falló");
         this.router.navigate(['']);
       }
     )
@@ -41,6 +42,14 @@ export class AgregarEducacionComponent implements OnInit {
 
   educacion_formal(){
     this.curso = 0;
+  }
+  
+  cancelar(){
+    this.actual = 0;
+  }
+
+  confirmar(){
+    this.actual = 1;
   }
   
 }

@@ -41,4 +41,12 @@ export class EditarTrabajoComponent implements OnInit {
     )
   }
 
+  cancelar(){
+    this.experiencia.actual = 0;
+  }
+
+  confirmar(){
+    this.experiencia.actual = 1;
+  }
+
 }

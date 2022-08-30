@@ -4,27 +4,27 @@
         <i class="bi bi-plus-square"></i>
     </button>
 </div>
-<div class="container mt-5 fuente" >
-    <div class="row justify-content-center">
-        <div class="col-lg-9 " >
+<div class="container mt-5 fuente " >
+    <div class="row justify-content-center ">
+        <div class="col-lg-9 ">
             <ul class="list-group " >
                 <li *ngFor="let educacion of educaciones; let i = index">
                     <div *ngIf="!educacion.curso"
-                class="list-group-item mb-4 fondo rounded-pill mt-5" 
+                class="list-group-item mb-4 fondo rounded-5 mt-5 mx-4"
                 data-aos="zoom-in"
                 data-aos-offset="100"
                 data-aos-once="true"
-                data-aos-duration="1750">
-                
-                    <div class="row ms-5">
-                        <div class="col-2 align-self-center">
+                data-aos-duration="1750" >
+                    <div class="row ms-sm-5 " >
+                        <div class="col-sm-2 align-self-center">
                             <img src="{{educacion.url}}" class="img-fluid " >
                         </div>
-                        <div class="col-10">
+                        <div class="col-sm-10">
                             <h3 class="mt-4 mx-4">{{educacion.titulo}}</h3>
                             <h6 class="my-4 mx-4">{{educacion.descripcion}}</h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0">{{educacion.fechaInicio}} </h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin!=0">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>          
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0 && !educacion.actual">{{educacion.fechaInicio}} </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0 &&  educacion.actual">{{educacion.fechaInicio}} - actual </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin!=0">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>         
                         </div>
                     </div>
                     <div class="text-center me-4 ">
@@ -35,7 +35,7 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
-                </div>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -47,27 +47,27 @@
         <i class="bi bi-plus-square"></i>
     </button>
 </div>
-<div class="container mt-5 fuente" >
-    <div class="row justify-content-center">
-        <div class="col-lg-9 " >
+<div class="container mt-5 fuente " >
+    <div class="row justify-content-center ">
+        <div class="col-lg-9 ">
             <ul class="list-group " >
                 <li *ngFor="let educacion of educaciones; let i = index">
                     <div *ngIf="educacion.curso"
-                class="list-group-item mb-4 fondo rounded-pill mt-5" 
+                class="list-group-item mb-4 fondo rounded-5 mt-5 mx-4"
                 data-aos="zoom-in"
                 data-aos-offset="100"
                 data-aos-once="true"
-                data-aos-duration="1750">
-                
-                    <div class="row ms-5">
-                        <div class="col-2 align-self-center">
+                data-aos-duration="1750" >
+                    <div class="row ms-sm-5 " >
+                        <div class="col-sm-2 align-self-center">
                             <img src="{{educacion.url}}" class="img-fluid " >
                         </div>
-                        <div class="col-10">
+                        <div class="col-sm-10">
                             <h3 class="mt-4 mx-4">{{educacion.titulo}}</h3>
                             <h6 class="my-4 mx-4">{{educacion.descripcion}}</h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0">{{educacion.fechaInicio}} </h6>
-                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin!=0">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>          
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0 && !educacion.actual">{{educacion.fechaInicio}} </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin==0 &&  educacion.actual">{{educacion.fechaInicio}} - actual </h6>
+                            <h6 class="mb-4 mx-4" *ngIf="educacion.fechaFin!=0">{{educacion.fechaInicio}} - {{educacion.fechaFin}} </h6>         
                         </div>
                     </div>
                     <div class="text-center me-4 ">
@@ -78,7 +78,7 @@
                             <i class="bi bi-trash"></i>
                         </button>
                     </div>
-                </div>
+                    </div>
                 </li>
             </ul>
         </div>
