@@ -1,0 +1,22 @@
+.fondo {
+
+    background: #AB8B67;
+}
+
+.btn{
+    background-color: #AB8B67;
+}
+
+.btn:hover{
+    color: #402E32;
+}
+
+#curso:focus{
+    background-color: green;
+    color:#402E32;
+}
+
+#curso:visited{
+    background-color: green;
+    color:#402E32;
+}

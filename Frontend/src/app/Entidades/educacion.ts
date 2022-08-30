@@ -5,13 +5,15 @@ export class Educacion{
     url!: string;
     fechaInicio!: number; 
     fechaFin! :number
+    curso!:number;
 
-    constructor(titulo:string,descripcion:string,url:string,fechaInicio:number,fechaFin:number){
+    constructor(titulo:string,descripcion:string,url:string,fechaInicio:number,fechaFin:number,curso:number){
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.curso = curso;
     }
     
 }

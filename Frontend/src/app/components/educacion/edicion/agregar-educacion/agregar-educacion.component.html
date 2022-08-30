@@ -1,31 +1,53 @@
-<div class="container">
-    <div class="row">
-        <div>
-            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
-                <div class="form-group">
-                    <label for="titulo">titulo</label>
-                    <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
-                </div>
-                <div class="form-group">
-                    <label for="descripcionE">Descripcion de sus estudios</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
-                </div>
-                <div class="form-group">
-                    <label for="url">url</label>
-                    <input type="text" class="form-control" id="url" name="url" [(ngModel)]="url" required>
-                </div>
-                <div class="form-group">
-                    <label for="fechaInicio">fechaInicio</label>
-                    <input type="number" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="fechaInicio" required>
-                </div>
-                <div class="form-group">
-                    <label for="fechaFin">fechaFin</label>
-                    <input type="number" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="fechaFin" required>
-                </div>
-                <button class="btn btn-primary">
-                    Agregar educacion
+<section class="vh-100 fondo">
+  <div class="container py-5 h-100 ">
+    <div class="row d-flex justify-content-center align-items-center h-100 ">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 ">
+              <div class="text-end">
+                  <button class="btn " routerLink="/">
+                      <i class="bi bi-x-circle "></i>
+                  </button>
+              </div>
+            <div class="mb-md-4 mt-md-3 text-start">
+              <label class="form-label mb-2">Seleccione:</label>
+              <div>
+                <button class="btn me-4" (click)="curso_()" id="curso">
+                  Curso
                 </button>
-            </form>
+                <button class="btn" (click)="educacion_formal()" id="educacion_formal">
+                  Educacion formal
+                </button>
+              </div>
+              <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                  <div class="form-group mt-2">
+                      <label class="form-label" for="titulo">Titulo</label>
+                      <input class="form-control form-control-lg"type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+                  </div>
+                  <div class="form-group mt-4">
+                      <label for="descripcionE">Descripción</label>
+                      <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="descripcion" required>
+                  </div>
+                  <div class="form-group mt-4">
+                      <label for="url">Url</label>
+                      <input type="text" class="form-control" id="url" name="url" [(ngModel)]="url" required>
+                  </div>
+                  <div class="form-group mt-4">
+                      <label for="fechaInicio">fechaInicio</label>
+                      <input type="number" class="form-control" id="fechaInicio" name="fechaInicio" [(ngModel)]="fechaInicio" required>
+                  </div>
+                  <div class="form-group my-4">
+                      <label for="fechaFin">fechaFin</label>
+                      <input type="number" class="form-control" id="fechaFin" name="fechaFin" [(ngModel)]="fechaFin" required>
+                  </div>
+                  <button class="btn ">
+                      Editar educacion
+                  </button>
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>

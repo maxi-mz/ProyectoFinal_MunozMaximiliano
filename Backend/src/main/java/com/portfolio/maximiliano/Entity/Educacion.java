@@ -17,20 +17,29 @@ public class Educacion implements Serializable {
     private int fechaInicio;
     private int fechaFin;
 
+    private int curso; // 0 si es educacion formal, 1 si es un curso -> lo hago así pues mysql no permite almacenar booleanos
+
 
     public Educacion() {
     }
 
-    public Educacion(Long idEdu, String titulo, String descripcion, String url, int fechaInicio, int fechaFin) {
+    public Educacion(Long idEdu, String titulo, String descripcion, String url, int fechaInicio, int fechaFin, int curso) {
         this.idEdu = idEdu;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-
+        this.curso = curso;
     }
 
+    public int getCurso() {
+        return curso;
+    }
+
+    public void setCurso(int curso) {
+        this.curso = curso;
+    }
 
     public Long getId() {
         return idEdu;

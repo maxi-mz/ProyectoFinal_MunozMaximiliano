@@ -41,4 +41,12 @@ export class EditarEducacionComponent implements OnInit {
     )
   }
 
+  curso(){
+    this.educacion.curso = 1;
+  }
+
+  educacion_formal(){
+    this.educacion.curso = 0;
+  }
+
 }

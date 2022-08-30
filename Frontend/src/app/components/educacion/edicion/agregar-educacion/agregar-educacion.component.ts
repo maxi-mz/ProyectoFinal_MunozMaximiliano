@@ -15,6 +15,7 @@ export class AgregarEducacionComponent implements OnInit {
   url!:string ;
   fechaInicio!:number;
   fechaFin!:number;
+  curso!:number;
 
   constructor(private educacionService: EducacionService, private router:Router) { }
 
@@ -22,7 +23,7 @@ export class AgregarEducacionComponent implements OnInit {
   }
 
   onCreate(): void{
-    const educacion = new Educacion(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin);
+    const educacion = new Educacion(this.titulo,this.descripcion,this.url,this.fechaInicio,this.fechaFin,this.curso);
     this.educacionService.agregarEducacion(educacion).subscribe(
       data =>{
         alert("Educacion añadida correctamente");
@@ -34,4 +35,12 @@ export class AgregarEducacionComponent implements OnInit {
     )
   }
 
+  curso_(){
+    this.curso = 1;
+  }
+
+  educacion_formal(){
+    this.curso = 0;
+  }
+  
 }
