@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/proyecto")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://maximiliano-munoz.firebaseapp.com")
 public class ProyectoController {
 
     private final ProyectoService proyectoService;
@@ -20,7 +20,7 @@ public class ProyectoController {
         this.proyectoService = proyectoService;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/agregar")
     public ResponseEntity<Proyecto> agregarProyecto(@RequestBody Proyecto proyecto){
         Proyecto nuevaProyecto = proyectoService.agregarProyecto(proyecto);
@@ -33,14 +33,14 @@ public class ProyectoController {
         return new ResponseEntity<>(proyectoes, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/actualizar")
     public ResponseEntity<Proyecto> editarProyecto(@RequestBody Proyecto proyecto){
         Proyecto updateProyecto = proyectoService.editarProyecto(proyecto);
         return new ResponseEntity<>(updateProyecto,HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarProyecto(@PathVariable("id")Long id){
         proyectoService.borrarProyecto(id);

@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/skill")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://maximiliano-munoz.firebaseapp.com")
 public class SkillController {
 
     private final SkillService skillService;
@@ -20,7 +20,7 @@ public class SkillController {
     public SkillController(SkillService skillService) {
         this.skillService = skillService;
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/agregar")
     public ResponseEntity<Skill> agregarSkills(@RequestBody Skill skill){
         Skill nuevaSkill = skillService.agregarSkill(skill);
@@ -32,13 +32,13 @@ public class SkillController {
         List<Skill> skills = skillService.buscarSkill();
         return new ResponseEntity<>(skills, HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/actualizar")
     public ResponseEntity<Skill> editarSkills(@RequestBody Skill skill){
         Skill updateSkill = skillService.editarSkill(skill);
         return new ResponseEntity<>(updateSkill,HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarSkills(@PathVariable("id")Long id){
         skillService.borrarSkill(id);

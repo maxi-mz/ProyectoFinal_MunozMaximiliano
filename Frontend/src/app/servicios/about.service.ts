@@ -11,10 +11,10 @@ export class AboutService {
   constructor( private http:HttpClient) { }
 
   public getAbout():Observable<About>{
-    return this.http.get<About>('http://localhost:8080/about/1');
+    return this.http.get<About>('https://portfolio-maxi.herokuapp.com/about/1');
   }
 
   public updateAbout(About:About):Observable<About>{
-    return this.http.put<About>('http://localhost:8080/about/actualizar',About);
+    return this.http.put<About>('https://portfolio-maxi.herokuapp.com/about/actualizar',About);
   }
 }

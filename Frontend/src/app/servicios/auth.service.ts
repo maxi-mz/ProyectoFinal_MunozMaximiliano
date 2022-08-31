@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://portfolio-maxi.herokuapp.com/auth/';
 
   constructor(private HttpClient: HttpClient) { }
 

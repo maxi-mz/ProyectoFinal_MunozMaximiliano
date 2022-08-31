@@ -12,22 +12,22 @@ export class ExperienciaService {
   constructor(private http:HttpClient) { }
 
   public listarExperiencia():Observable<Experiencia[]>{
-    return this.http.get<Experiencia[]>('http://localhost:8080/experiencia/listar');
+    return this.http.get<Experiencia[]>('https://portfolio-maxi.herokuapp.com/experiencia/listar');
   }
 
   public actualizarExperiencia(experiencia:Experiencia):Observable<Experiencia>{
-    return this.http.put<Experiencia>('http://localhost:8080/experiencia/actualizar',experiencia);
+    return this.http.put<Experiencia>('https://portfolio-maxi.herokuapp.com/experiencia/actualizar',experiencia);
   }
 
   public agregarExperiencia(experiencia:Experiencia):Observable<Experiencia>{
-    return this.http.post<Experiencia>('http://localhost:8080/experiencia/agregar',experiencia)
+    return this.http.post<Experiencia>('https://portfolio-maxi.herokuapp.com/experiencia/agregar',experiencia)
   }
 
   public borrarExperiencia(id:number):Observable<void>{
-    return this.http.delete<void>('http://localhost:8080/experiencia/borrar/id/' + id )
+    return this.http.delete<void>('https://portfolio-maxi.herokuapp.com/experiencia/borrar/id/' + id )
   }
 
   public obtenerPorId(id: number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(`http://localhost:8080/experiencia/${id}`);
+    return this.http.get<Experiencia>(`https://portfolio-maxi.herokuapp.com/experiencia/${id}`);
   }
 }

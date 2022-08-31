@@ -12,14 +12,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/experiencia")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://maximiliano-munoz.firebaseapp.com")
 public class ExperienciaController {
     private final ExperienciaService experienciaService;
 
     public ExperienciaController(ExperienciaService experienciaService) {
         this.experienciaService = experienciaService;
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/agregar")
     public ResponseEntity<Experiencia> agregarExperiencia(@RequestBody Experiencia experiencia){
         Experiencia nuevaExperiencia = experienciaService.agregarExperiencia(experiencia);
@@ -31,13 +31,13 @@ public class ExperienciaController {
         List<Experiencia> experiencias = experienciaService.buscarExperiencia();
         return new ResponseEntity<>(experiencias, HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/actualizar")
     public ResponseEntity<Experiencia> editarExperiencia(@RequestBody Experiencia experiencia){
         Experiencia updateExperiencia = experienciaService.editarExperiencia(experiencia);
         return new ResponseEntity<>(updateExperiencia,HttpStatus.OK);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarExperiencia(@PathVariable("id")Long id){
         experienciaService.borrarExperiencia(id);

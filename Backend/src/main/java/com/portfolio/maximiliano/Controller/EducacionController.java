@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://maximiliano-munoz.firebaseapp.com")
 public class EducacionController {
 
     private final EducacionService educacionService;
@@ -21,7 +21,7 @@ public class EducacionController {
         this.educacionService = educacionService;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PostMapping("/agregar")
     public ResponseEntity<Educacion> agregarEducacion(@RequestBody Educacion educacion){
         Educacion nuevaEducacion = educacionService.agregarEducacion(educacion);
@@ -34,14 +34,12 @@ public class EducacionController {
         return new ResponseEntity<>(educaciones, HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/actualizar")
     public ResponseEntity<Educacion> editarEducacion(@RequestBody Educacion educacion){
         Educacion updateEducacion = educacionService.editarEducacion(educacion);
         return new ResponseEntity<>(updateEducacion,HttpStatus.OK);
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/borrar/id/{id}")
     public ResponseEntity<?> borrarEducacion(@PathVariable("id")Long id){
         educacionService.borrarEducacion(id);

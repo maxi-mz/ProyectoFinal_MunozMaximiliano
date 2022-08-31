@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/about")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://maximiliano-munoz.firebaseapp.com")
 public class AboutController {
 
     private final AboutService aboutService;
@@ -18,7 +18,7 @@ public class AboutController {
         this.aboutService = aboutService;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+
     @PutMapping("/actualizar")
     public ResponseEntity<About> editarAbout(@RequestBody About about){
         About updateAbout = aboutService.editarAbout(about);

@@ -12,22 +12,22 @@ export class ProyectoService {
   constructor(private http:HttpClient) { }
 
   public listarProyecto():Observable<Proyecto[]>{
-    return this.http.get<Proyecto[]>('http://localhost:8080/proyecto/listar');
+    return this.http.get<Proyecto[]>('https://portfolio-maxi.herokuapp.com/proyecto/listar');
   }
 
   public actualizarProyecto(proyecto:Proyecto):Observable<Proyecto>{
-    return this.http.put<Proyecto>('http://localhost:8080/proyecto/actualizar',proyecto);
+    return this.http.put<Proyecto>('https://portfolio-maxi.herokuapp.com/proyecto/actualizar',proyecto);
   }
 
   public agregarProyecto(proyecto:Proyecto):Observable<Proyecto>{
-    return this.http.post<Proyecto>('http://localhost:8080/proyecto/agregar',proyecto)
+    return this.http.post<Proyecto>('https://portfolio-maxi.herokuapp.com/proyecto/agregar',proyecto)
   }
 
   public borrarProyecto(id:number):Observable<void>{
-    return this.http.delete<void>('http://localhost:8080/proyecto/borrar/id/' + id )
+    return this.http.delete<void>('https://portfolio-maxi.herokuapp.com/proyecto/borrar/id/' + id )
   }
 
   public obtenerPorId(id: number): Observable<Proyecto>{
-    return this.http.get<Proyecto>(`http://localhost:8080/proyecto/${id}`);
+    return this.http.get<Proyecto>(`https://portfolio-maxi.herokuapp.com/proyecto/${id}`);
   }
 }
