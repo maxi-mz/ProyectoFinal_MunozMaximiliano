@@ -1,3 +1,6 @@
+
+<!-- COMPONENTE NUNCA UTILIZADO! (se queda en el deploy por una cuestión de entender en futuras revisiones el como se ordenaron los distintos componentes .)-->
+
 <section class="vh-100 fondo">
     <div class="container py-5 h-100 ">
       <div class="row d-flex justify-content-center align-items-center h-100 ">
@@ -35,9 +38,17 @@
                     <label for="url">Url</label>
                     <input type="text" class="form-control" id="url" name="url" [(ngModel)]="about.url" required>
                   </div>
+                  <div class="form-group mt-4">
+                    <label for="apodo">Apodo (Banner)</label>
+                    <input type="text" class="form-control" id="apodo" name="apodo" [(ngModel)]="about.apodo" required>
+                  </div>
+                  <div class="form-group my-4">
+                    <label for="saludo">Saludo (Banner)</label>
+                    <input type="text" class="form-control" id="saludo" name="saludo" [(ngModel)]="about.saludo" required>
+                  </div>
                   <div class="text-center">
                     <button class="btn ">
-                      Editar educación
+                      Editar información personal
                     </button>
                   </div>
                 </form>

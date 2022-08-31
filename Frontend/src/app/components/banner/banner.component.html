@@ -1,7 +1,12 @@
 <div class="container d-flex justify-content-center align-items-end  " id="fondo">
         <div class="text-center" id="texto">
-            <h1 id="titulo"> Hola! soy <span id="nombre">Maxi.  </span></h1>
-            <p  id="subtitulo" class=" mt-5"> Bienvenidos a mi página! </p> 
+            <h1 id="titulo"> Hola! soy <span id="nombre">{{about?.apodo}}.  </span></h1>
+            <p  id="subtitulo" class=" mt-5"> {{about?.saludo}} </p> 
+        </div>
+        <div>
+            <button class="btn btn-lg text-center botones" routerLink="/editarusuario/1" *ngIf="isLogged">
+                <i class="bi bi-pencil"></i>
+            </button>
         </div>
 </div>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

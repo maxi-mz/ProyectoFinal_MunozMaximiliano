@@ -17,6 +17,10 @@ public class About implements Serializable {
     private String descripcion;
     private String url;
 
+    private String apodo;
+
+    private String saludo;
+
     @OneToMany(fetch = FetchType.LAZY,mappedBy = "idEdu")
     private List<Educacion> educacionList;
 
@@ -32,13 +36,31 @@ public class About implements Serializable {
     public About() {
     }
 
-    public About(Long idAbout, String nombre, String apellido, String titulo, String descripcion, String url) {
+    public About(Long idAbout, String nombre, String apellido, String titulo, String descripcion, String url, String apodo, String saludo) {
         this.idAbout = idAbout;
         this.nombre = nombre;
         this.apellido = apellido;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
+        this.apodo = apodo;
+        this.saludo = saludo;
+    }
+
+    public String getApodo() {
+        return apodo;
+    }
+
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
+    }
+
+    public String getSaludo() {
+        return saludo;
+    }
+
+    public void setSaludo(String saludo) {
+        this.saludo = saludo;
     }
 
     public Long getId() {

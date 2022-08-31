@@ -17,9 +17,9 @@
                                 <h3 class="naranja">{{proyecto.titulo}}</h3>
                                 <p class="blanco" >{{proyecto.descripcion}}</p>
                                 <p class="blanco" >{{proyecto.fecha}}</p>
-                                <button type="button" class="btn btn-lg botones" routerLink="/">
+                                <a href="{{proyecto.url}}" type="button" class="btn btn-lg botones">
                                     <i class="bi bi-arrow-up-right-circle-fill"></i>
-                                </button>
+                                </a>
                         </div>
                         <div class="text-center me-4 ">
                             <button type="button" class="btn btn-lg mx-4 botones" routerLink="/editarproyecto/{{proyecto.id}}" *ngIf="isLogged">

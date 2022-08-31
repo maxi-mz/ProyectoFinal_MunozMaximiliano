@@ -65,3 +65,11 @@ h1::after{
         transform: translateY(0);
     }
 }
+
+.botones{
+    color: #AB8B67;
+}
+
+.botones:hover{
+    color: #FFA500;
+}
